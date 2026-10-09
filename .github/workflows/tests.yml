@@ -1,0 +1,21 @@
+name: brew test-bot
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: actions/checkout@v4
+      - name: Tap
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/ops4life"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/ops4life/homebrew-awsp"
+      - run: brew audit --strict ops4life/awsp/awsp
+      - run: brew install --build-from-source ops4life/awsp/awsp
+      - run: brew test ops4life/awsp/awsp
