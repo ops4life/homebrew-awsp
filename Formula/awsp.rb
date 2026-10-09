@@ -22,6 +22,6 @@ class Awsp < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("sh -c '. #{pkgshare}/awsp.sh && awsp --version'")
+    assert_match version.to_s, shell_output("bash -c '. #{pkgshare}/awsp.sh && awsp --version'")
   end
 end
