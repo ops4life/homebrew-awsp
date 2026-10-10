@@ -1,8 +1,8 @@
 class Awsp < Formula
   desc "Lightweight cross-shell AWS profile switcher with SSO auto-login"
   homepage "https://github.com/ops4life/awsp"
-  url "https://github.com/ops4life/awsp/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "d9a3b5ae5387bdba409fa740a652d78319abc81ef09f1ae0cd754ef0882faa73"
+  url "https://github.com/ops4life/awsp/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "de20409c92fcb2af7520d47ed317761748fd06134ccc23ffc8c197fb7aec6e24"
   license "MIT"
 
   def install
